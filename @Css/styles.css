@@ -1,0 +1,740 @@
+@tailwind base;
+
+/* @layer base {
+    :root {
+      --color-primary: 27 219 23;
+      --color-accent: 27 219 23;
+      --color-compliment: 27 219 23;
+    }
+} */
+
+/* Firefox */
+* {
+	scrollbar-width: thin;
+	scrollbar-color: #999 transparent;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+*::-webkit-scrollbar-track:hover {
+	background: #f2f2f2;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: #ddd;
+}
+*::-webkit-scrollbar-thumb:hover {
+	background-color: #bbb;
+}
+
+.scrollbar-autohide::-webkit-scrollbar-thumb {
+	background-color: transparent;
+}
+
+.scrollbar-autohide:hover::-webkit-scrollbar-thumb {
+	background-color: #ddd !important;
+}
+
+@tailwind components;
+@tailwind utilities;
+
+html {
+	user-select: none;
+}
+
+.allow-select {
+	-webkit-user-select: text !important; /* Chrome 49+ */
+	-moz-user-select: text !important; /* Firefox 43+ */
+	-ms-user-select: text !important; /* No support yet */
+	user-select: text !important; /* Likely future */
+}
+
+.force-select {
+	-webkit-user-select: all !important; /* Chrome 49+ */
+	-moz-user-select: all !important; /* Firefox 43+ */
+	-ms-user-select: all !important; /* No support yet */
+	user-select: all !important; /* Likely future */
+}
+
+#root {
+	height: 100vh;
+}
+
+.main-container {
+	@apply flex-1 flex flex-col overflow-y-auto overflow-x-visible;
+}
+
+/* Do not remove, added to remove the empty padding above date picker */
+.rdrDateDisplayWrapper {
+	display: none !important;
+}
+
+/* Extended utility classes */
+
+.pixelated {
+	image-rendering: pixelated;
+}
+
+.text-label {
+	@apply text-xs text-secondary;
+}
+
+.text-xxs {
+	font-size: 0.6rem;
+}
+
+.flex-center {
+	@apply flex items-center justify-center;
+}
+
+.flex-center-between {
+	@apply flex items-center justify-between;
+}
+
+.align-center {
+	@apply flex items-center;
+}
+
+.inline-item {
+	@apply inline align-middle;
+}
+
+.background-cover {
+	@apply bg-cover bg-center bg-no-repeat;
+}
+
+h6 {
+	@apply text-xs font-bold;
+}
+
+h5 {
+	@apply text-sm font-bold;
+}
+
+h4 {
+	@apply text-base font-bold;
+}
+
+h3 {
+	@apply text-lg font-bold;
+}
+
+h2 {
+	@apply text-xl font-bold;
+}
+
+h1 {
+	@apply text-2xl font-bold;
+}
+
+/* Button */
+.btn {
+	@apply px-4 py-2 font-medium rounded-md whitespace-nowrap flex items-center justify-center ring-1 ring-inset ring-transparent transition-all duration-200;
+}
+
+.btn.btn-xs {
+	@apply text-xs px-2 py-1;
+}
+
+.btn.btn-sm {
+	@apply text-sm px-3 py-2;
+}
+
+.btn.btn-lg {
+	@apply text-lg px-4 py-2;
+}
+
+.btn.btn-icon {
+	@apply w-8 h-8 p-0 hover:bg-surface;
+}
+
+.btn.btn-primary {
+	@apply bg-primary hover:bg-accent text-white;
+}
+
+.btn.btn-disabled {
+	@apply bg-light;
+}
+
+.btn.btn-outlined {
+	@apply ring-muted shadow-sm bg-canvas hover:bg-light;
+}
+
+.btn.btn-dark {
+	@apply bg-dark hover:bg-primary text-canvas;
+}
+
+.btn.btn-accent {
+	@apply bg-accent hover:bg-accent text-canvas;
+}
+
+.btn.btn-secondary {
+	@apply bg-surface text-dark hover:bg-muted;
+}
+
+.btn.btn-light {
+	@apply bg-canvas text-secondary hover:text-black;
+}
+
+.btn.btn-danger {
+	@apply bg-danger hover:bg-dangerText text-dangerText hover:text-canvas;
+}
+
+.btn.btn-success {
+	@apply bg-success hover:bg-successText text-successText hover:text-canvas;
+}
+
+.btn.btn-warning {
+	@apply bg-warning hover:bg-warningText text-warningText hover:text-canvas;
+}
+
+/* Input Classes */
+
+.input {
+	@apply rounded-md bg-light px-3 py-2 ring-2 ring-transparent ring-inset focus:ring-dark focus:outline-none focus:bg-canvas duration-200;
+}
+
+input[type="time"]::-webkit-datetime-edit-hour-field:focus,
+input[type="time"]::-webkit-datetime-edit-minute-field:focus,
+input[type="time"]::-webkit-datetime-edit-second-field:focus,
+input[type="time"]::-webkit-datetime-edit-ampm-field:focus {
+	@apply bg-primary;
+}
+
+* {
+	@apply focus:outline-dark;
+}
+
+.searchbox {
+	@apply w-full indent-6 pr-8 rounded-md bg-light px-2 py-1 ring-1 ring-transparent focus:ring-surface focus:bg-canvas duration-200 text-sm;
+}
+
+.searchbox:focus {
+	@apply w-96 max-w-full outline-none;
+}
+
+label {
+	@apply text-sm font-semibold;
+}
+
+/* Sidebar */
+.sidebar-wrapper {
+	@apply h-full w-60 transition-all duration-300 overflow-hidden;
+}
+
+.sidebar-wrapper.collapsed {
+	@apply w-[4.8rem];
+}
+
+.sidebar-wrapper .sidebar {
+	@apply border-r border-surface w-60 h-full flex flex-col justify-between;
+}
+.sidebar-wrapper.collapsed .sidebar {
+	@apply border-r border-surface w-full h-full flex flex-col justify-between;
+}
+
+.sidebar .avatar {
+	@apply w-8 h-8 rounded-full min-w-fit;
+}
+
+.sidebar .menu {
+	@apply flex flex-col;
+}
+
+.sidebar .menu .label {
+	@apply text-xs p-3 text-secondary;
+}
+
+.sidebar .menu .pinned {
+	@apply flex-center cursor-pointer transition-all duration-200 border rounded-md p-2 hover:bg-light;
+}
+.sidebar .menu .item {
+	@apply flex items-center py-2 px-3 mb-1 rounded-md hover:bg-light cursor-pointer transition-all duration-300;
+}
+
+.sidebar .menu .sub-items {
+	@apply max-h-0 overflow-hidden transition-all duration-300;
+}
+
+.sidebar .menu .sub-items.active {
+	@apply max-h-80 overflow-hidden;
+}
+
+.sidebar .menu .sub-item {
+	@apply flex items-center py-2 px-3 my-1 rounded-md hover:bg-light cursor-pointer transition-all duration-300;
+}
+
+.sidebar .menu .sub-item.active .arrow {
+	@apply w-4 transition-all duration-200;
+}
+.sidebar .menu .sub-item.active .arrow {
+	@apply w-0 m-0;
+}
+.sidebar .menu .sub-item.active {
+	@apply bg-light border-l-4 border-primary;
+}
+
+.sidebar .menu .item.active {
+	@apply bg-light border-l-4 border-primary duration-100;
+}
+
+/* Topbar */
+.topbar-wrapper {
+	@apply h-16 overflow-hidden border-b border-surface;
+}
+
+.topbar {
+	@apply flex h-full items-center justify-between p-4 transition-all duration-300;
+}
+
+.topbar.hide {
+	@apply h-0 opacity-0 pt-0 pb-0;
+}
+
+/* Notifications */
+.sidepane-wrapper {
+	@apply w-[16rem] h-full overflow-hidden flex-center border-l border-surface transition-all duration-300;
+}
+
+.sidepane-wrapper.collapsed {
+	@apply w-0;
+}
+
+.sidepane {
+	@apply w-full h-full transition-all duration-300 overflow-hidden;
+}
+
+.sidepane.hide {
+	@apply w-0 opacity-0;
+}
+
+.sidepane-content {
+	@apply min-w-[16rem] w-full h-full flex flex-col justify-between overflow-y-auto overflow-x-hidden;
+}
+
+.notification {
+	@apply flex items-center p-2 rounded-md cursor-pointer transition-all duration-300 mb-2 hover:bg-light;
+}
+
+.notification.unread {
+	@apply bg-compliment;
+}
+
+.notification .description {
+	@apply h-0 opacity-0 overflow-hidden transition-all duration-300 text-xs text-secondary;
+}
+
+.notification:hover .description {
+	@apply h-16 opacity-100;
+}
+
+/* User profile */
+.user-options {
+	@apply transition-all duration-300 rounded-md  hover:bg-light relative;
+}
+
+.user-options .profile {
+	@apply flex items-center w-full cursor-pointer p-2 transition-all duration-300;
+}
+
+.user-options .options {
+	@apply h-0 opacity-0 flex flex-col justify-end overflow-hidden transition-all duration-300;
+}
+
+.user-options .options-mini {
+	@apply absolute left-0 top-0 rounded-md shadow-md block bg-canvas;
+}
+
+.user-options .item {
+	@apply py-2 px-4 gap-x-4 flex rounded-md items-center cursor-pointer text-sm transition-all duration-300 hover:bg-surface;
+}
+
+.user-options .mini-item {
+	@apply py-3 flex-center rounded-md cursor-pointer text-sm transition-all duration-300 hover:bg-surface;
+}
+
+.user-options:hover .options {
+	@apply h-20 opacity-100;
+}
+
+/* Dropdown menu */
+.dropdown {
+	@apply relative inline-block text-left;
+}
+
+.dropdown .items {
+	@apply z-10 mt-2 origin-top-left divide-y divide-light rounded-md bg-canvas shadow-lg ring-1 ring-muted overflow-hidden;
+}
+
+.dropdown .item {
+	@apply px-4 py-2 text-sm cursor-pointer flex items-center border-none whitespace-nowrap;
+}
+
+/* Containers */
+.container {
+	@apply p-4 rounded-md !max-w-full;
+}
+
+.container.outlined {
+	@apply border border-surface;
+}
+
+.container.light {
+	@apply bg-light;
+}
+
+.container.whitish {
+	@apply bg-whitish;
+}
+
+.container.canvas {
+	@apply bg-canvas;
+}
+
+/* Badges */
+.badge {
+	@apply inline-flex items-center rounded-md px-2 py-1 text-xs ring-1 ring-inset bg-light text-strong ring-surface;
+}
+
+.badge.danger {
+	@apply bg-danger text-dangerText ring-red-600/10;
+}
+
+.badge.success {
+	@apply bg-success text-successText ring-green-600/20;
+}
+
+.badge.warning {
+	@apply bg-warning text-warningText ring-yellow-600/20;
+}
+
+.badge.info {
+	@apply bg-info text-infoText ring-blue-700/10;
+}
+
+/* Select Input */
+
+.select {
+	@apply relative inline-block text-left w-full;
+}
+
+.select .options {
+	@apply bg-canvas mt-2 max-h-56 overflow-y-auto rounded-md shadow-lg ring-1 ring-muted;
+}
+
+.select .options .item {
+	@apply relative rounded-md cursor-pointer select-none px-4 py-2 text-sm flex-center-between whitespace-nowrap;
+}
+
+/* Combobox */
+
+.combobox {
+	@apply relative inline-block text-left w-full;
+}
+
+.combobox .input {
+	@apply inline-flex w-full justify-between items-center cursor-pointer rounded-md bg-canvas py-2 px-3 text-left font-semibold shadow-sm ring-1 ring-inset ring-muted;
+}
+
+.combobox .options {
+	@apply absolute z-10 bg-canvas mt-2 max-h-56 w-full overflow-auto rounded-md shadow-lg ring-1 ring-muted;
+}
+
+.combobox .options .item {
+	@apply relative cursor-pointer select-none px-4 py-2 text-sm flex-center-between;
+}
+
+/* Indicators */
+.indicator {
+	@apply flex items-center gap-x-1.5;
+}
+
+.indicator .pulse {
+	@apply flex-none rounded-full p-1;
+}
+
+.indicator.success .pulse {
+	@apply bg-success;
+}
+
+.indicator.success .dot {
+	@apply bg-successText;
+}
+
+.indicator.info .pulse {
+	@apply bg-info;
+}
+
+.indicator.info .dot {
+	@apply bg-infoText;
+}
+
+.indicator.danger .pulse {
+	@apply bg-danger;
+}
+
+.indicator.danger .dot {
+	@apply bg-dangerText;
+}
+
+.indicator.warning .pulse {
+	@apply bg-warning;
+}
+
+.indicator.warning .dot {
+	@apply bg-warningText;
+}
+
+.indicator .dot {
+	@apply h-2 w-1.5 rounded-full;
+}
+
+/* Switch */
+.switch {
+	@apply relative inline-flex h-[21px] w-[37px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75;
+}
+
+.switch .knob {
+	@apply pointer-events-none inline-block h-[17px] w-[17px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out;
+}
+
+/* Dialog */
+.dialog .content {
+	@apply w-full max-w-md relative transform rounded-lg bg-canvas text-left align-middle shadow-xl transition-all;
+}
+
+.dialog .backdrop {
+	@apply fixed inset-0 bg-secondary bg-opacity-75 transition-opacity;
+}
+
+/* Popup */
+.popup .content {
+	@apply mt-2 rounded-md bg-canvas shadow-lg ring-1 ring-inset ring-surface w-screen max-w-md;
+}
+
+/* Tabs */
+.tabs-group .tabs {
+	@apply flex items-center gap-x-4;
+}
+
+.tabs-group .tabs .tab {
+	@apply border-b-2 font-semibold border-b-transparent pb-2 text-sm cursor-pointer hover:text-dark text-secondary;
+}
+
+.tabs-group .tabs .tab.active {
+	@apply border-b-dark text-dark outline-0;
+}
+
+.tabs-group > .content {
+	@apply mt-4;
+}
+
+/* Pagination */
+.pagination {
+	@apply isolate inline-flex gap-x-2 overflow-hidden;
+}
+
+.pagination .page {
+	@apply border relative inline-flex items-center justify-center w-6 h-6 rounded-md text-sm font-semibold focus:z-20 cursor-pointer hover:bg-light;
+}
+
+.pagination .page.active {
+	@apply bg-accent border-accent text-white ring-accent cursor-default;
+}
+
+/*Trippy AI styles*/
+
+.trippy {
+	@apply absolute right-5 top-5 w-64 z-20;
+}
+
+.chip {
+	@apply py-1.5 p-2.5 rounded-full text-xs border border-muted text-strong cursor-pointer hover:bg-compliment hover:text-accent hover:border-accent whitespace-nowrap;
+}
+
+.chip.active {
+	@apply bg-primary text-white border-primary;
+}
+
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.scrollbar-hidden::-webkit-scrollbar {
+	@apply hidden;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hidden {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+/* Range Slider */
+input[type="range"] {
+	@apply cursor-pointer bg-transparent appearance-none;
+	-webkit-appearance: none;
+}
+
+input[type="range"]:focus {
+	@apply outline-none;
+}
+
+/***** Chrome, Safari, Opera and Edge Chromium styles *****/
+input[type="range"]::-webkit-slider-runnable-track {
+	@apply h-1 rounded-full bg-muted;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none; /* Override default look */
+	@apply -my-1.5 bg-primary h-4 w-4 appearance-none rounded-full transition-all duration-200;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+	-webkit-appearance: none; /* Override default look */
+	@apply w-6;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+	@apply ring-2 ring-dark;
+}
+
+/******** Firefox styles ********/
+input[type="range"]::-moz-range-track {
+	@apply h-1 rounded-full bg-muted;
+}
+
+/* slider thumb */
+input[type="range"]::-moz-range-thumb {
+	@apply bg-primary h-4 w-4 rounded-full;
+}
+
+input[type="range"]:focus::-moz-range-thumb {
+	@apply ring-2 ring-dark;
+}
+
+/* Carousel */
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+	@apply !text-sm;
+}
+
+.swiper-button-next:after,
+.swiper-button-next:after {
+	@apply !text-sm;
+}
+
+.swiper-button-next {
+	@apply !text-dark !bg-white !rounded-full !w-7 !h-7 !overflow-hidden !shadow-md;
+}
+
+.swiper-button-prev {
+	@apply !text-dark !bg-white !rounded-full !w-7 !h-7 !overflow-hidden !shadow-md;
+}
+
+/* Radio Group */
+
+.radio-group {
+	@apply mx-auto w-full;
+}
+
+.radio-group .options.horizontal {
+	@apply flex items-center space-x-2 w-full overflow-x-auto scrollbar-hidden;
+}
+
+.radio-group .options.vertical {
+	@apply space-y-2 max-h-60 overflow-y-auto pr-4;
+}
+
+.radio-group .options .tick {
+	@apply text-accent;
+}
+
+.radio-group .option {
+	@apply bg-white  text-sm relative flex cursor-pointer rounded-md border border-muted focus:outline-none w-full items-center justify-between;
+}
+
+.radio-group .option:hover {
+	@apply bg-compliment;
+}
+
+.radio-group .option.active {
+	@apply bg-compliment text-accent border-accent;
+}
+
+.frosted {
+	@apply backdrop-filter backdrop-blur-sm bg-opacity-50;
+}
+
+.zigzag {
+	top: -1rem;
+	width: 100%;
+	height: 1rem;
+	background-image: linear-gradient(45deg, #fff 50%, transparent 50%), linear-gradient(-45deg, #fff 50%, transparent 50%);
+	background-size: 1rem 1rem;
+}
+
+/* table tr th:last-child div div,
+table tr td:last-child div div {
+	@apply flex justify-end;
+} */
+
+/* React Big Calendar override classes */
+
+.rbc-btn-group button {
+	font-size: 0.7rem !important;
+}
+.rbc-toolbar-label {
+	font-size: 0.8rem !important;
+}
+.rbc-header {
+	padding: 0.5rem !important;
+	min-height: 2rem !important;
+	height: 100% !important;
+}
+.rbc-event {
+	@apply !bg-primary;
+}
+.rbc-today {
+	@apply !bg-compliment;
+}
+.rbc-off-range-bg {
+	@apply !bg-light;
+}
+.rbc-active {
+	@apply !bg-light !shadow-none;
+}
+.rbc-month-view {
+	@apply !rounded-md;
+}
+.rbc-time-view {
+	@apply !rounded-md;
+}
+.rbc-time-slot {
+	@apply !bg-whitish flex items-center;
+}
+
+.gradient-glass {
+	border-radius: 15rem;
+	background: radial-gradient(105.68% 45.69% at 92.95% 50%, rgba(105, 244, 253, 0.5) 0%, rgba(160, 255, 244, 0.095) 53.91%, rgba(254, 216, 255, 0) 100%), radial-gradient(103.18% 103.18% at 90.11% 102.39%, #c9fff2 0%, rgba(230, 255, 250, 0) 100%),
+		radial-gradient(90.45% 90.45% at 87.84% 9.55%, #ffd2f5 0%, rgba(254, 219, 246, 0) 100%), linear-gradient(135.66deg, rgba(203, 185, 255, 0.8) 14.89%, rgba(216, 202, 254, 0) 74.33%);
+	background-blend-mode: normal, normal, normal, normal, normal, normal;
+	filter: blur(50px);
+}
+
+/* Flight card expand and collapse */
+.flight-card .flight-details {
+	@apply shadow-sm border-b;
+}
+.flight-card .fare-option {
+	@apply max-h-1 overflow-hidden transition-all duration-300 opacity-0;
+}
+.flight-card:hover .fare-option {
+	@apply max-h-[8rem] overflow-hidden opacity-100;
+}
