@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { MdSignalWifiStatusbarConnectedNoInternet4 } from "react-icons/md";
-import OnOffGame from '../../Games/onOff';
+import OnOffGame from '../Games/onOff';
 
 function InternetMonitor() {
     
