@@ -75,5 +75,7 @@ export { default as Graph } from "./Graph";
 export { default as CardsRenderer } from "./CardsRenderer";
 export { default as ScrollToTop } from "./ScrollToTop";
 export { default as CodeViewer } from "./CodeViewer";
+export { default as Violations } from "./Violations";
+export { default as Remarks } from "./Remarks";
 export { default as InternetMonitor } from "./InternetMonitor/InternetMonitor";
 export * as Transitions from "./Transitions";
