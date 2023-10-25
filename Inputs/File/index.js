@@ -36,7 +36,7 @@ function FileInput({ label, name, className = "", onUpload = () => {}, files = [
 	};
 
 	const uploader = (file) => {
-		if (file.name && checkExtension(file.name)) {
+		if (file?.name && checkExtension(file.name)) {
 			setUploading(true);
 			if (url && data) {
 				//File will be uploaded to a url with data
