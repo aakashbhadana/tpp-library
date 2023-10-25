@@ -2,7 +2,7 @@ import React from "react";
 import { UserPhoto, FileInput } from "../..";
 import { FaEdit } from "react-icons/fa";
 
-function ProfilePhoto({ photo, onUpdate = () => {}, name = "a", className = "", size = "xl" }) {
+function ProfilePhoto({ photo, onUpdate, name = "a", className = "", size = "xl" }) {
 	const SIZES = {
 		xs: "w-6 h-6",
 		sm: "w-8 h-8",
@@ -14,11 +14,13 @@ function ProfilePhoto({ photo, onUpdate = () => {}, name = "a", className = "", 
 	return (
 		<div className={`relative group max-w-min ${className}`}>
 			<UserPhoto photo={photo} className={SIZES[size]} />
-			<FileInput file={photo} onUpload={onUpdate}>
-				<div className={`${SIZES[size]} rounded-full absolute left-0 top-0 flex-center bg-dark opacity-0 group-hover:opacity-70 cursor-pointer text-white`}>
-					<FaEdit />
-				</div>
-			</FileInput>
+			{onUpdate && (
+				<FileInput file={photo} onUpload={onUpdate}>
+					<div className={`${SIZES[size]} rounded-full absolute left-0 top-0 flex-center bg-dark opacity-0 group-hover:opacity-70 cursor-pointer text-white`}>
+						<FaEdit />
+					</div>
+				</FileInput>
+			)}
 		</div>
 	);
 }
