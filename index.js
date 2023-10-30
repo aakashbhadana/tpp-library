@@ -77,5 +77,6 @@ export { default as ScrollToTop } from "./ScrollToTop";
 export { default as CodeViewer } from "./CodeViewer";
 export { default as Violations } from "./Violations";
 export { default as Remarks } from "./Remarks";
+export { default as CustomInputs } from "./CustomInputs";
 export { default as InternetMonitor } from "./InternetMonitor/InternetMonitor";
 export * as Transitions from "./Transitions";
