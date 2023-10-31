@@ -33,7 +33,7 @@ function DialogPane({ open = false, variant = "success", title = "Title", descri
 					</div>
 				</div>
 				{children}
-				<div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+				<div className="bg-gray-50 px-4 py-3 flex flex-row-reverse">
 					<Button variant={variant} type="button" onClick={onSubmit}>
 						{submitLabel}
 					</Button>
