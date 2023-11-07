@@ -321,7 +321,7 @@ label {
 }
 
 .notification {
-	@apply flex items-center p-2 rounded-md cursor-pointer transition-all duration-300 mb-2 hover:bg-light;
+	@apply flex items-center p-2 rounded-md transition-all duration-300 mb-2 hover:bg-light;
 }
 
 .notification.unread {
