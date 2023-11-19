@@ -68,7 +68,7 @@ function FileInput({ label, name, className = "", onUpload = () => {}, files = [
 
 	return (
 		<div className={`${className}`}>
-			<input accept={extensions.join(",")} ref={FILE_REF} onChange={onSelect} id={id} name={id} type="file" className="hidden" />
+			<input accept={extensions.join(",")} ref={FILE_REF} onChange={onSelect} name={id} type="file" className="hidden" />
 			{children ? (
 				//For extending the button functionality
 				<div onClick={() => FILE_REF.current.click()}>{children}</div>
