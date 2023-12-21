@@ -36,8 +36,8 @@ function Steps({ goNext, loading, steps = [], onChange = () => {} }) {
 							<div className="pt-4">
 								<div className="mt-4">{step.content}</div>
 								<div className="flex mt-6">
-									{ActiveStep < steps.length + 1 && (
-										<Button loading={loading} onClick={() => nextStep(ActiveStep + 1)} className="btn-sm mr-2" variant="primary">
+									{ActiveStep < steps.length && (
+										<Button loading={loading} onClick={() => nextStep(ActiveStep + 1)} className="mr-2 btn-sm" variant="primary">
 											Continue
 										</Button>
 									)}

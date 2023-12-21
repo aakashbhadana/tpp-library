@@ -69,7 +69,7 @@ html {
 }
 
 .main-container {
-	@apply flex-1 flex flex-col overflow-y-auto overflow-x-visible;
+	@apply flex flex-col flex-1 overflow-x-visible overflow-y-auto;
 }
 
 /* Do not remove, added to remove the empty padding above date picker */
@@ -108,7 +108,7 @@ html {
 }
 
 .background-cover {
-	@apply bg-cover bg-center bg-no-repeat;
+	@apply bg-center bg-no-repeat bg-cover;
 }
 
 h6 {
@@ -137,19 +137,19 @@ h1 {
 
 /* Button */
 .btn {
-	@apply px-4 py-2 font-medium rounded-md whitespace-nowrap flex items-center justify-center ring-1 ring-inset ring-transparent transition-all duration-200;
+	@apply flex items-center justify-center px-4 py-2 font-medium transition-all duration-200 rounded-md whitespace-nowrap ring-1 ring-inset ring-transparent;
 }
 
 .btn.btn-xs {
-	@apply text-xs px-2 py-1;
+	@apply px-2 py-1 text-xs;
 }
 
 .btn.btn-sm {
-	@apply text-sm px-3 py-2;
+	@apply px-3 py-2 text-sm;
 }
 
 .btn.btn-lg {
-	@apply text-lg px-4 py-2;
+	@apply px-4 py-2 text-lg;
 }
 
 .btn.btn-icon {
@@ -157,7 +157,7 @@ h1 {
 }
 
 .btn.btn-primary {
-	@apply bg-primary hover:bg-accent text-white;
+	@apply text-white bg-primary hover:bg-accent;
 }
 
 .btn.btn-disabled {
@@ -165,7 +165,7 @@ h1 {
 }
 
 .btn.btn-outlined {
-	@apply ring-muted shadow-sm bg-canvas hover:bg-light;
+	@apply shadow-sm ring-muted bg-canvas hover:bg-light;
 }
 
 .btn.btn-dark {
@@ -199,7 +199,7 @@ h1 {
 /* Input Classes */
 
 .input {
-	@apply rounded-md bg-light px-3 py-2 ring-2 ring-transparent ring-inset focus:ring-dark focus:outline-none focus:bg-canvas duration-200;
+	@apply px-3 py-2 duration-200 rounded-md bg-light ring-2 ring-transparent ring-inset focus:ring-dark focus:outline-none focus:bg-canvas;
 }
 
 input[type="time"]::-webkit-datetime-edit-hour-field:focus,
@@ -214,11 +214,11 @@ input[type="time"]::-webkit-datetime-edit-ampm-field:focus {
 }
 
 .searchbox {
-	@apply w-full indent-6 pr-8 rounded-md bg-light px-2 py-1 ring-1 ring-transparent focus:ring-surface focus:bg-canvas duration-200 text-sm;
+	@apply w-full px-2 py-1 pr-8 text-sm duration-200 rounded-md indent-6 bg-light ring-1 ring-transparent focus:ring-surface focus:bg-canvas;
 }
 
 .searchbox:focus {
-	@apply w-96 max-w-full outline-none;
+	@apply max-w-full outline-none w-96;
 }
 
 label {
@@ -227,7 +227,7 @@ label {
 
 /* Sidebar */
 .sidebar-wrapper {
-	@apply h-full w-60 transition-all duration-300 overflow-hidden;
+	@apply h-full overflow-hidden transition-all duration-300 w-60;
 }
 
 .sidebar-wrapper.collapsed {
@@ -235,10 +235,10 @@ label {
 }
 
 .sidebar-wrapper .sidebar {
-	@apply border-r border-surface w-60 h-full flex flex-col justify-between;
+	@apply flex flex-col justify-between h-full border-r border-surface w-60;
 }
 .sidebar-wrapper.collapsed .sidebar {
-	@apply border-r border-surface w-full h-full flex flex-col justify-between;
+	@apply flex flex-col justify-between w-full h-full border-r border-surface;
 }
 
 .sidebar .avatar {
@@ -250,26 +250,26 @@ label {
 }
 
 .sidebar .menu .label {
-	@apply text-xs p-3 text-secondary;
+	@apply p-3 text-xs text-secondary;
 }
 
 .sidebar .menu .pinned {
-	@apply flex-center cursor-pointer transition-all duration-200 border rounded-md p-2 hover:bg-light;
+	@apply p-2 transition-all duration-200 border rounded-md cursor-pointer flex-center hover:bg-light;
 }
 .sidebar .menu .item {
-	@apply flex items-center py-2 px-3 mb-1 rounded-md hover:bg-light cursor-pointer transition-all duration-300;
+	@apply flex items-center px-3 py-2 mb-1 transition-all duration-300 rounded-md cursor-pointer hover:bg-light;
 }
 
 .sidebar .menu .sub-items {
-	@apply max-h-0 overflow-hidden transition-all duration-300;
+	@apply overflow-hidden transition-all duration-300 max-h-0;
 }
 
 .sidebar .menu .sub-items.active {
-	@apply max-h-80 overflow-hidden;
+	@apply overflow-hidden max-h-80;
 }
 
 .sidebar .menu .sub-item {
-	@apply flex items-center py-2 px-3 my-1 rounded-md hover:bg-light cursor-pointer transition-all duration-300;
+	@apply flex items-center px-3 py-2 my-1 transition-all duration-300 rounded-md cursor-pointer hover:bg-light;
 }
 
 .sidebar .menu .sub-item.active .arrow {
@@ -279,11 +279,11 @@ label {
 	@apply w-0 m-0;
 }
 .sidebar .menu .sub-item.active {
-	@apply bg-light border-l-4 border-primary;
+	@apply border-l-4 bg-light border-primary;
 }
 
 .sidebar .menu .item.active {
-	@apply bg-light border-l-4 border-primary duration-100;
+	@apply duration-100 border-l-4 bg-light border-primary;
 }
 
 /* Topbar */
@@ -292,11 +292,11 @@ label {
 }
 
 .topbar {
-	@apply flex h-full items-center justify-between p-4 transition-all duration-300;
+	@apply flex items-center justify-between h-full p-4 transition-all duration-300;
 }
 
 .topbar.hide {
-	@apply h-0 opacity-0 pt-0 pb-0;
+	@apply h-0 pt-0 pb-0 opacity-0;
 }
 
 /* Notifications */
@@ -309,7 +309,7 @@ label {
 }
 
 .sidepane {
-	@apply w-full h-full transition-all duration-300 overflow-hidden;
+	@apply w-full h-full overflow-hidden transition-all duration-300;
 }
 
 .sidepane.hide {
@@ -321,7 +321,7 @@ label {
 }
 
 .notification {
-	@apply flex items-center p-2 rounded-md transition-all duration-300 mb-2 hover:bg-light;
+	@apply flex items-center p-2 mb-2 transition-all duration-300 rounded-md hover:bg-light;
 }
 
 .notification.unread {
@@ -329,7 +329,7 @@ label {
 }
 
 .notification .description {
-	@apply h-0 opacity-0 overflow-hidden transition-all duration-300 text-xs text-secondary;
+	@apply h-0 overflow-hidden text-xs transition-all duration-300 opacity-0 text-secondary;
 }
 
 .notification:hover .description {
@@ -338,27 +338,27 @@ label {
 
 /* User profile */
 .user-options {
-	@apply transition-all duration-300 rounded-md  hover:bg-light relative;
+	@apply relative transition-all duration-300 rounded-md hover:bg-light;
 }
 
 .user-options .profile {
-	@apply flex items-center w-full cursor-pointer p-2 transition-all duration-300;
+	@apply flex items-center w-full p-2 transition-all duration-300 cursor-pointer;
 }
 
 .user-options .options {
-	@apply h-0 opacity-0 flex flex-col justify-end overflow-hidden transition-all duration-300;
+	@apply flex flex-col justify-end h-0 overflow-hidden transition-all duration-300 opacity-0;
 }
 
 .user-options .options-mini {
-	@apply absolute left-0 top-0 rounded-md shadow-md block bg-canvas;
+	@apply absolute top-0 left-0 block rounded-md shadow-md bg-canvas;
 }
 
 .user-options .item {
-	@apply py-2 px-4 gap-x-4 flex rounded-md items-center cursor-pointer text-sm transition-all duration-300 hover:bg-surface;
+	@apply flex items-center px-4 py-2 text-sm transition-all duration-300 rounded-md cursor-pointer gap-x-4 hover:bg-surface;
 }
 
 .user-options .mini-item {
-	@apply py-3 flex-center rounded-md cursor-pointer text-sm transition-all duration-300 hover:bg-surface;
+	@apply py-3 text-sm transition-all duration-300 rounded-md cursor-pointer flex-center hover:bg-surface;
 }
 
 .user-options:hover .options {
@@ -371,11 +371,11 @@ label {
 }
 
 .dropdown .items {
-	@apply z-10 mt-2 origin-top-left divide-y divide-light rounded-md bg-canvas shadow-lg ring-1 ring-muted overflow-hidden;
+	@apply z-10 mt-2 overflow-hidden origin-top-left divide-y rounded-md shadow-lg divide-light bg-canvas ring-1 ring-muted;
 }
 
 .dropdown .item {
-	@apply px-4 py-2 text-sm cursor-pointer flex items-center border-none whitespace-nowrap;
+	@apply flex items-center px-4 py-2 text-sm border-none cursor-pointer whitespace-nowrap;
 }
 
 /* Containers */
@@ -401,7 +401,7 @@ label {
 
 /* Badges */
 .badge {
-	@apply inline-flex items-center rounded-md px-2 py-1 text-xs ring-1 ring-inset bg-light text-strong ring-surface;
+	@apply inline-flex items-center px-2 py-1 text-xs rounded-md ring-1 ring-inset bg-light text-strong ring-surface;
 }
 
 .badge.danger {
@@ -423,33 +423,33 @@ label {
 /* Select Input */
 
 .select {
-	@apply relative inline-block text-left w-full;
+	@apply relative inline-block w-full text-left;
 }
 
 .select .options {
-	@apply bg-canvas mt-2 max-h-56 overflow-y-auto rounded-md shadow-lg ring-1 ring-muted;
+	@apply mt-2 overflow-y-auto rounded-md shadow-lg bg-canvas max-h-56 ring-1 ring-muted;
 }
 
 .select .options .item {
-	@apply relative rounded-md cursor-pointer select-none px-4 py-2 text-sm flex-center-between whitespace-nowrap;
+	@apply relative px-4 py-2 text-sm rounded-md cursor-pointer select-none flex-center-between whitespace-nowrap;
 }
 
 /* Combobox */
 
 .combobox {
-	@apply relative inline-block text-left w-full;
+	@apply relative inline-block w-full text-left;
 }
 
 .combobox .input {
-	@apply inline-flex w-full justify-between items-center cursor-pointer rounded-md bg-canvas py-2 px-3 text-left font-semibold shadow-sm ring-1 ring-inset ring-muted;
+	@apply inline-flex items-center justify-between w-full px-3 py-2 font-semibold text-left rounded-md shadow-sm cursor-pointer bg-canvas ring-1 ring-inset ring-muted;
 }
 
 .combobox .options {
-	@apply absolute z-10 bg-canvas mt-2 max-h-56 w-full overflow-auto rounded-md shadow-lg ring-1 ring-muted;
+	@apply absolute z-10 w-full mt-2 overflow-auto rounded-md shadow-lg bg-canvas max-h-56 ring-1 ring-muted;
 }
 
 .combobox .options .item {
-	@apply relative cursor-pointer select-none px-4 py-2 text-sm flex-center-between;
+	@apply relative px-4 py-2 text-sm cursor-pointer select-none flex-center-between;
 }
 
 /* Indicators */
@@ -458,7 +458,7 @@ label {
 }
 
 .indicator .pulse {
-	@apply flex-none rounded-full p-1;
+	@apply flex-none p-1 rounded-full;
 }
 
 .indicator.success .pulse {
@@ -508,16 +508,16 @@ label {
 
 /* Dialog */
 .dialog .content {
-	@apply w-full max-w-md relative transform rounded-lg bg-canvas text-left align-middle shadow-xl transition-all;
+	@apply relative w-full max-w-md text-left align-middle transition-all transform rounded-lg shadow-xl bg-canvas;
 }
 
 .dialog .backdrop {
-	@apply fixed inset-0 bg-secondary bg-opacity-75 transition-opacity;
+	@apply fixed inset-0 transition-opacity bg-opacity-75 bg-secondary;
 }
 
 /* Popup */
 .popup .content {
-	@apply mt-2 rounded-md bg-canvas shadow-lg ring-1 ring-inset ring-surface w-screen max-w-md;
+	@apply w-screen max-w-md mt-2 rounded-md shadow-lg bg-canvas ring-1 ring-inset ring-surface;
 }
 
 /* Tabs */
@@ -526,7 +526,7 @@ label {
 }
 
 .tabs-group .tabs .tab {
-	@apply border-b-2 font-semibold border-b-transparent pb-2 text-sm cursor-pointer hover:text-dark text-secondary;
+	@apply pb-2 text-sm font-semibold border-b-2 cursor-pointer border-b-transparent hover:text-dark text-secondary;
 }
 
 .tabs-group .tabs .tab.active {
@@ -539,21 +539,21 @@ label {
 
 /* Pagination */
 .pagination {
-	@apply isolate inline-flex gap-x-2 overflow-hidden;
+	@apply inline-flex overflow-hidden isolate gap-x-2;
 }
 
 .pagination .page {
-	@apply border relative inline-flex items-center justify-center w-6 h-6 rounded-md text-sm font-semibold focus:z-20 cursor-pointer hover:bg-light;
+	@apply relative inline-flex items-center justify-center w-6 h-6 text-sm font-semibold border rounded-md cursor-pointer focus:z-20 hover:bg-light;
 }
 
 .pagination .page.active {
-	@apply bg-accent border-accent text-white ring-accent cursor-default;
+	@apply text-white cursor-default bg-accent border-accent ring-accent;
 }
 
 /*Trippy AI styles*/
 
 .trippy {
-	@apply absolute right-5 top-5 w-64 z-20;
+	@apply absolute z-20 w-64 right-5 top-5;
 }
 
 .chip {
@@ -561,7 +561,7 @@ label {
 }
 
 .chip.active {
-	@apply bg-primary text-white border-primary;
+	@apply text-white bg-primary border-primary;
 }
 
 /* For Webkit-based browsers (Chrome, Safari and Opera) */
@@ -577,7 +577,7 @@ label {
 
 /* Range Slider */
 input[type="range"] {
-	@apply cursor-pointer bg-transparent appearance-none;
+	@apply bg-transparent appearance-none cursor-pointer;
 	-webkit-appearance: none;
 }
 
@@ -611,7 +611,7 @@ input[type="range"]::-moz-range-track {
 
 /* slider thumb */
 input[type="range"]::-moz-range-thumb {
-	@apply bg-primary h-4 w-4 rounded-full;
+	@apply w-4 h-4 rounded-full bg-primary;
 }
 
 input[type="range"]:focus::-moz-range-thumb {
@@ -641,15 +641,15 @@ input[type="range"]:focus::-moz-range-thumb {
 /* Radio Group */
 
 .radio-group {
-	@apply mx-auto w-full;
+	@apply w-full mx-auto;
 }
 
 .radio-group .options.horizontal {
-	@apply flex items-center space-x-2 w-full overflow-x-auto scrollbar-hidden;
+	@apply flex items-center w-full space-x-2 overflow-x-auto scrollbar-hidden;
 }
 
 .radio-group .options.vertical {
-	@apply space-y-2 max-h-60 overflow-y-auto pr-4;
+	@apply pr-4 space-y-2 overflow-y-auto max-h-60;
 }
 
 .radio-group .options .tick {
@@ -657,7 +657,7 @@ input[type="range"]:focus::-moz-range-thumb {
 }
 
 .radio-group .option {
-	@apply bg-white  text-sm relative flex cursor-pointer rounded-md border border-muted focus:outline-none w-full items-center justify-between;
+	@apply relative flex items-center justify-between w-full text-sm bg-white border rounded-md cursor-pointer border-muted focus:outline-none;
 }
 
 .radio-group .option:hover {
@@ -669,7 +669,7 @@ input[type="range"]:focus::-moz-range-thumb {
 }
 
 .frosted {
-	@apply backdrop-filter backdrop-blur-sm bg-opacity-50;
+	@apply bg-opacity-50 backdrop-filter backdrop-blur-sm;
 }
 
 .zigzag {
@@ -730,10 +730,10 @@ table tr td:last-child div div {
 
 /* Flight card expand and collapse */
 .flight-card .flight-details {
-	@apply shadow-sm border-b;
+	@apply border-b shadow-sm;
 }
 .flight-card .fare-option {
-	@apply max-h-1 overflow-hidden transition-all duration-300 opacity-0;
+	@apply overflow-hidden transition-all duration-300 opacity-0 max-h-1;
 }
 .flight-card:hover .fare-option {
 	@apply max-h-[8rem] overflow-hidden opacity-100;
