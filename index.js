@@ -81,5 +81,5 @@ export { default as CustomInputs } from "./CustomInputs";
 export { default as FlightTicket } from "./Templates/flightTicket";
 export { default as InternetMonitor } from "./InternetMonitor/InternetMonitor";
 export { default as ReadMore } from "./ReadMore";
-
+export { default as ConfettiAnimation } from "./ConfettiAnimation";
 export * as Transitions from "./Transitions";
