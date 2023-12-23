@@ -1,8 +1,12 @@
 import React, { useEffect } from "react";
+import CoinSound from "./coin.mp3";
 
 function ConfettiAnimation({ show }) {
+	const coinSound = new Audio(CoinSound);
+
 	useEffect(() => {
 		if (show) {
+			coinSound.play();
 			setTimeout(shoot, 0);
 			setTimeout(shoot, 100);
 			setTimeout(shoot, 200);
