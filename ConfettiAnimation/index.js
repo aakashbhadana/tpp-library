@@ -1,39 +1,42 @@
 import React, { useEffect } from "react";
-import { confetti } from "https://cdn.jsdelivr.net/npm/tsparticles-confetti/+esm";
 
 function ConfettiAnimation({ show }) {
-	// go Buckeyes!
-	const colors = ["#1BDB17", "#F1C93B"];
-
 	useEffect(() => {
 		if (show) {
-			run(Date.now());
+			setTimeout(shoot, 0);
+			setTimeout(shoot, 100);
+			setTimeout(shoot, 200);
 		}
 	}, [show]);
 
-	const run = (startTime) => {
-		(function frame() {
-			confetti({
-				particleCount: 2,
-				angle: 60,
-				spread: 55,
-				origin: { x: 0 },
-				colors: colors,
-			});
-
-			confetti({
-				particleCount: 2,
-				angle: 120,
-				spread: 55,
-				origin: { x: 1 },
-				colors: colors,
-			});
-
-			if (Date.now() < startTime + 1000) {
-				requestAnimationFrame(frame);
-			}
-		})();
+	const defaults = {
+		spread: 100,
+		ticks: 100,
+		gravity: 0,
+		decay: 0.9,
+		startVelocity: 50,
 	};
+
+	function shoot() {
+		window.confetti({
+			...defaults,
+			particleCount: 30,
+			scalar: 1.2,
+			shapes: ["circle", "square"],
+			colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"],
+		});
+		window.confetti({
+			...defaults,
+			particleCount: 20,
+			scalar: 2,
+			shapes: ["emoji"],
+			shapeOptions: {
+				emoji: {
+					value: ["🤑", "🚀"],
+				},
+			},
+		});
+	}
 
 	return <></>;
 }
