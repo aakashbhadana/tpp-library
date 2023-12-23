@@ -23,7 +23,7 @@ function ConfettiAnimation({ show }) {
 			particleCount: 30,
 			scalar: 1.2,
 			shapes: ["circle", "square"],
-			colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"],
+			colors: ["#a864fd", "#29cdff", "#78ff44", "#fdff6a"],
 		});
 		window.confetti({
 			...defaults,
