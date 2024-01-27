@@ -543,7 +543,7 @@ label {
 }
 
 .pagination .page {
-	@apply relative inline-flex items-center justify-center w-6 h-6 text-sm font-semibold border rounded-md cursor-pointer focus:z-20 hover:bg-light;
+	@apply relative inline-flex items-center justify-center w-6 h-6 text-sm font-semibold border rounded-md cursor-pointer min-w-6 min-h-6 max-w-14 focus:z-20 hover:bg-light;
 }
 
 .pagination .page.active {
