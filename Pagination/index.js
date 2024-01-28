@@ -8,10 +8,10 @@ function Pagination({ total = 1, active = 0, onChange = () => {}, className = ""
 				<span className="sr-only">Previous</span>
 				<FiChevronLeft className="w-5 h-5" aria-hidden="true" />
 			</div>
-			<div className="max-w-[32rem] overflow-x-auto flex gap-1 scrollbar-hidden">
+			<div className="flex gap-1 scrollbar-hidden max-w-[30rem] overflow-y-auto">
 				{[...Array(total)].map((e, i) => {
 					return (
-						<div key={i} onClick={() => onChange(i + 1)} className={`page ${active === i + 1 ? "active" : ""}`}>
+						<div key={i} onClick={() => onChange(i + 1)} className={`page px-2 !w-auto ${active === i + 1 ? "active" : ""}`}>
 							{i + 1}
 						</div>
 					);

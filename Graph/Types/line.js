@@ -8,9 +8,7 @@ function LineGraph({ data, xLabelKey, yLabelKey, legends = [], width, height, cl
 			<YAxis dataKey={yLabelKey} />
 			<Tooltip />
 			<Legend />
-			{legends.map((line, i) => {
-				return <Line key={i} type="monotone" dataKey={line.title} stroke={line.color} activeDot={{ r: 8 }} strokeWidth={2} />;
-			})}
+			<Line type="monotone" dataKey={legends[0].title} stroke={legends[0].color} activeDot={{ r: 8 }} strokeWidth={2} />
 		</LineChart>
 	);
 }

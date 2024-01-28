@@ -12,8 +12,8 @@ const toasts = {
 		errorSound.play();
 	},
 	handleError: (err) => {
-		toast.error(err.response.data.error);
-		if (err.response.data.errors) {
+		toast.error(err.response?.data.error);
+		if (err.response?.data.errors) {
 			err.response.data.errors.forEach((e) => {
 				toast.error(e);
 			});
