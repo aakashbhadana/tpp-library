@@ -9,7 +9,7 @@ function LineGraph({ data, xLabelKey, yLabelKey, legends = [], width, height, cl
 			<Tooltip />
 			<Legend />
 			{legends.map((line, i) => {
-				return <Line key={i} type="monotone" dataKey={line.title} stroke={line.color} activeDot={{ r: 8 }} strokeWidth={2} />;
+				return <Line key={i} type="monotone" dataKey={line.title} stroke={line.color} activeDot={{ r: 4 }} strokeWidth={2} />;
 			})}
 		</LineChart>
 	);
