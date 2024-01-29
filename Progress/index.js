@@ -14,13 +14,13 @@ function Progress({ label = "Used", showLabels = true, value = 0, symbol = "", s
 				<div className="flex justify-between mb-2">
 					<span className="text-sm font-medium">{label}</span>
 					<span className="text-xs font-medium">
-						{value}
+						{Math.floor(value)}
 						{symbol}
 					</span>
 				</div>
 			)}
 			<div className={`w-full bg-surface rounded-full ${sizes[size]}`}>
-				<div className={`bg-primary rounded-full transition-all duration-300 ${sizes[size]}`} style={{ width: `${value}%` }} />
+				<div className={`bg-primary rounded-full transition-all duration-300 ${sizes[size]}`} style={{ width: `${Math.floor(value)}%` }} />
 			</div>
 		</div>
 	);
