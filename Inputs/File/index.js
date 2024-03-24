@@ -8,7 +8,7 @@ import { useRef } from "react";
 import { uploadFile, uploadFileToUrl } from "../../../../Utils/axios";
 import { Toast } from "../../..";
 
-function FileInput({ label, name, className = "", onUpload = () => {}, files = [], file, onDelete, multiple = false, children, extensions = [".jpg", ".jpeg", ".png"], url, data }) {
+function FileInput({ label, name, required = false, className = "", onUpload = () => {}, files = [], file, onDelete, multiple = false, children, extensions = [".jpg", ".jpeg", ".png"], url, data }) {
 	const id = name || uuidv4();
 	const FILE_REF = useRef();
 	const [Uploading, setUploading] = useState();
@@ -68,14 +68,14 @@ function FileInput({ label, name, className = "", onUpload = () => {}, files = [
 
 	return (
 		<div className={`${className}`}>
-			<input accept={extensions.join(",")} ref={FILE_REF} onChange={onSelect} name={id} type="file" className="hidden" />
+			<input multiple={false} required={required} accept={extensions.join(",")} ref={FILE_REF} onChange={onSelect} name={id} type="file" className="hidden" />
 			{children ? (
 				//For extending the button functionality
 				<div onClick={() => FILE_REF.current.click()}>{children}</div>
 			) : (
 				<>
 					{label && (
-						<label htmlFor={id} className="mb-2 block">
+						<label htmlFor={id} className="block mb-2">
 							{label}
 						</label>
 					)}
@@ -83,7 +83,7 @@ function FileInput({ label, name, className = "", onUpload = () => {}, files = [
 						{files.length > 0 && <Attachments onDelete={onDelete} files={files} />}
 						{file && <Attachments onDelete={onDelete} files={file ? [file] : []} />}
 						{!multiple && files.length === 0 && (
-							<div onClick={() => FILE_REF.current.click()} className="w-14 h-14 rounded-2xl bg-light flex-center cursor-pointer hover:rotate-90 hover:bg-primary transition-all duration-300">
+							<div onClick={() => FILE_REF.current.click()} className="transition-all duration-300 cursor-pointer w-14 h-14 rounded-2xl bg-light flex-center hover:rotate-90 hover:bg-primary">
 								{Uploading ? <Spinner /> : <FiPaperclip />}
 							</div>
 						)}

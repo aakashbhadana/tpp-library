@@ -26,7 +26,7 @@ function DateRangePicker({ label = "", range = {}, setRange = () => {}, classNam
 
 	return (
 		<div className={`relative ${className}`}>
-			{label && <label className="mb-2 block">{label}</label>}
+			{label && <label className="block mb-2">{label}</label>}
 			<div ref={setPopRef} className={`text-sm ring-1 ring-inset ring-muted bg-canvas shadow-sm rounded-md p-2.5 align-center cursor-pointer ${inputClass}`} onClick={() => setShowPicker(!ShowPicker)}>
 				{range.startDate && range.endDate ? (
 					<>
@@ -41,7 +41,7 @@ function DateRangePicker({ label = "", range = {}, setRange = () => {}, classNam
 			</div>
 			<Transition ref={setPopElem} style={styles.popper} {...attributes.popper} className="z-10 mt-2" show={ShowPicker ? true : false}>
 				<DateRange
-					className="rounded-lg overflow-hidden shadow-lg border"
+					className="overflow-hidden border rounded-lg shadow-lg"
 					editableDateInputs={true}
 					onChange={(item) => {
 						const { startDate, endDate } = item.selection;
